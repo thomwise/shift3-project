@@ -1,0 +1,428 @@
+// Variables
+$color-gold: #FFCD03;
+$color-blue: #0455BF;
+$input-height: 75px;
+
+// Mixins
+@mixin transition-ease {
+  transition: all .5s ease-in-out;
+}
+
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+em{
+    font-style: normal;
+}
+.col-sm-5{
+    padding: 0px;
+}
+
+.page-grid{
+   padding: 0px;
+}
+.header{
+    height: 50px;
+}
+.header-container{
+    padding: 10px 0px;
+}
+.logo-container{
+    height: 100%;
+}
+.logo{
+    height: 50px;
+    width: 70px;
+}
+
+.hero{
+    height: 400px;
+    
+}
+.hero-container{
+    background-image: linear-gradient(to right bottom, hsla(0, 0%, 20%, 0.9), hsla(0, 0%, 20%, 0.9)), url('https://shift3tech.com/love-salesforce-2/img/banner.jpg');
+    background-size: cover;
+    background-position: center center;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.guide-cover{
+    min-width: 220px;
+    height: 300px;
+    background-image: url('https://shift3tech.com/love-salesforce-2/img/cover.jpg');
+    background-size: 100% 100%;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 48vh;
+      left: 15%;
+      height: 100%;
+      width: 121%;
+      background: $color-gold;
+      opacity: 0;
+      @include transition-ease;
+    }
+
+    &:hover {
+        &::after {
+            opacity: .8;
+            border-radius: 35px;
+            margin-top: 1rem;
+        }
+    }
+}
+.guide-title{
+    font-size: 2em;
+    margin-left: 40px;
+    font-weight: 300;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    font-weight: 900;
+}
+
+.form-container{
+    height: 100%;
+    position: relative;
+    padding: 0px;
+}
+
+#crmWebToEntityForm{
+    width: 100%;
+    height: 132%;
+    border-radius: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    box-shadow: 5px 10px 100px hsla(0, 0%, 0%, 0.2);
+
+    form{
+        width: 100%;
+        padding: 30px;
+
+        h3{
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+    
+    tr , td { 
+        padding:6px;
+        border-spacing:0px;
+        border-width:0px;
+        width: 100%;
+        font-size: 1em;
+        }
+
+    table{
+        width: 100%;
+
+        input{
+            width: 100%;
+            border: 1px solid #D9DDE0;
+            border-radius: 3px;
+        }
+        input[type="text"]{
+            font-size: 1em;
+            padding: 6px;
+        }
+
+        span{
+            color: red;
+        }
+
+        .submit-btn{
+            background-color: $color-gold;
+            border: none;
+            padding: 10px 0px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+    }
+}
+
+.body-content{
+    margin: 25px 10px;
+    padding: 70px 15px;
+    text-align: center;
+    background: rgba(255, 205, 3, .6);
+    border-radius: 35px;
+    p{
+        font-size: 1em;
+    }
+    a{
+      color: #000;
+      font-size: 0.8em;
+    }
+}
+strong{
+    font-weight: 700;
+}
+
+.footer{
+    height: 50px;
+    background-color: #F8F8F8;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-container{
+    width: 30px;
+    height: 30px;
+    background-color: $color-gold;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px;
+
+    i{
+        &hover{
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+  #registration {
+    width: 45vw;
+  }
+}
+
+@media only screen and (min-width: 991px){
+  #registration {
+    width: 32vw;
+  }
+  .body-content {
+    background: none;
+  }
+}
+
+@media only screen and (max-width: 991px){
+    .guide-cover{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 800px){
+    .footer{
+        position: static;
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .logo-container{
+        text-align: center;
+    }
+    .guide-title{
+        margin: 50px 0px;
+        text-align: center;
+    }
+    #crmWebToEntityForm{
+        position: static;
+        height: auto
+    }
+    .hero{
+        height: 600px;
+    }
+    .body-content{
+        height: auto;
+    }
+    .footer{
+        position: static;
+    }
+}
+ul{
+    padding: 0px;
+}
+
+.body-content ol li{
+    margin-bottom: 15px;
+}
+  
+  .registration-form {
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 10%;
+    
+    background: transparent;
+    
+    header {
+      position: relative;
+      z-index: 4;
+      background: white;
+      padding: 20px 40px;
+      border-radius: 15px 15px 0 0;
+      
+      h1 {
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: #333;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 23px;
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      p {
+        word-spacing: 0px;
+        color: rgb(58, 63, 66); 
+        font-size: 17px;
+        margin: 0;
+        margin-top: 5px;
+      }
+    }
+    
+    form {
+      position: relative;
+    }
+    
+    .input-section {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      left: 50%;
+      transform: translate(-50%, 0);
+      height: $input-height;
+      border-radius: 0 0 15px 15px;
+      overflow: hidden;
+      z-index: 2;
+      box-shadow: 0px 0px 100px rgba(0,0,0,0.2);
+      transition: all 0.2s ease-in;
+      
+      &.folded {
+        width: 95%;
+        margin-top: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+        
+        input {
+          background-color: $color-blue;
+        }
+        
+        span {
+          background-color: $color-blue;
+        }
+      }
+      
+      &.folded + .folded {
+        width: 90%;
+        margin-top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 0;
+        
+        input {
+          background-color: $color-gold;
+        }
+        
+        span {
+          background-color: $color-gold;
+        }
+      }
+      
+      &.fold-up {
+        margin-top: -$input-height;
+      }
+    }
+    
+    form input {
+      background: lighten(rgb(243, 243, 251), 5%);
+      color: rgb(143, 143, 214);
+      width: 80%;
+      border: 0;
+      padding: 20px 40px;
+      margin: 0;
+      
+      &:focus {
+        outline: none;
+      }
+      
+      &::placeholder {
+        color: rgb(143, 143, 214);
+        font-weight: 100;
+      }
+    }
+  }
+  
+  .animated-button {
+    width: 20%;
+    background-color: rgb(212, 212, 255);
+    
+    span {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      line-height: $input-height;
+      text-align: center;
+      height: $input-height;
+      transition: all 0.2s ease-in;
+      
+      i {
+        font-size: 25px;
+        color: rgb(153, 153, 248);
+      }
+    }
+    
+    .next-button {
+      background: transparent;
+      color: rgb(153, 153, 248);
+      font-weight: 100;
+      width: 100%;
+      border: 0;
+    }
+  }
+  
+  .next {
+    margin-top: -$input-height;
+  }
+  
+  .success {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: $input-height;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0px 0px 100px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in;
+    background: limegreen;
+    margin-top: -$input-height;
+    
+    p {
+      color: white;
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 18px;
+      width: 100%;
+      text-align: center;
+    }
+  }
